@@ -24,6 +24,8 @@ import config as cf
 import sys
 import controller
 from DISClib.ADT import list as lt
+from DISClib.ADT import orderedmap as om
+from DISClib.DataStructures import orderedmapstructure as mo
 assert cf
 
 
@@ -35,12 +37,17 @@ operación solicitada
 """
 
 def printMenu():
+    print("\n")
+    print("*******************************************")
     print("Bienvenido")
-    print("1- Cargar información en el catálogo")
-    print("2- ")
+    print("1- Cargar el catálogo")
+    print("2- Cargar información en el catalogo")
+    print("3- Caracterizar las reproducciones")
+    print("0-Salir")
+    print("*******************************************")
 
 catalog = None
-
+contexto= "context_content_features-small.csv"
 """
 Menu principal
 """
@@ -48,9 +55,21 @@ while True:
     printMenu()
     inputs = input('Seleccione una opción para continuar\n')
     if int(inputs[0]) == 1:
-        print("Cargando información de los archivos ....")
 
+        print("\nInicializando....")
+        # cont es el controlador que se usará de acá en adelante
+        cont = controller.init()
     elif int(inputs[0]) == 2:
+        print("Cargando información de los archivos ....")
+        controller.loadData(cont, contexto)
+
+        print("Hay "+str(lt.size(cont["tracks"]))+" tracks cargados.")
+       # print(lt.size(cont['tracks']))
+       # print(om.size(cont['artist_id']))
+        print(cont['instrumentalness'])
+        
+        
+    elif int(input[0]) ==3:
         pass
 
     else:
