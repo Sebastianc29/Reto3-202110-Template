@@ -52,10 +52,11 @@ def newAnalyzer():
                 'instrumentalness':None,
                 'speechiness':None,
                 'liveness':None,
-                'energy':None
+                'energy':None,
                 'danceability':None,
                 'valence':None,
-                'acousticness':None
+                'acousticness':None,
+                'artist_id':None
                 }
     analyzer['tracks'] = lt.newList('SINGLE_LINKED', compareIds)
     for parte in analyzer:
@@ -140,7 +141,11 @@ def newDataEntry(track,caracteristica):
 # Funciones para creacion de datos
 
 # Funciones de consulta
+def req1(caracteristica,minimo,maximo,cont):
 
+    lst=om.keys(cont[caracteristica],minimo,maximo)
+    print(lst)
+    return lst
 # Funciones utilizadas para comparar elementos dentro de una lista
 
 # Funciones de ordenamiento

@@ -51,9 +51,8 @@ def loadData(analyzer, contexto):
         break
     return analyzer
 # Funciones de ordenamiento
-def nuevo (caracteristica, catalogo):
-    for track in catalogo['artist_id']:
-        print(track['instrumentalness'])
-        model.addTrack(analyzer, track) 
+
 
 # Funciones de consulta sobre el catálogo
+def req1(caracteristica,minimo,maximo,cont):
+    return model.req1

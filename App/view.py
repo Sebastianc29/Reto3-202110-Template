@@ -64,13 +64,17 @@ while True:
         controller.loadData(cont, contexto)
 
         print("Hay "+str(lt.size(cont["tracks"]))+" tracks cargados.")
-       # print(lt.size(cont['tracks']))
-       # print(om.size(cont['artist_id']))
-        print(cont['instrumentalness'])
         
         
-    elif int(input[0]) ==3:
-        pass
+    elif int(inputs[0]) ==3:
+        caracteristica=str(input("Ingrese una caracteristica: "))
+        minimo=input("Ingrese el valor minimo del contenido: ")
+        maximo=input("Ingrese el valor minimo del contenido: ")
+        m=om.valueSet(cont['instrumentalness'])
+        print(m)
+        lst=om.keys(cont[caracteristica],minimo,maximo)
+        print(lt.size(lst))
+       
 
     else:
         sys.exit(0)
