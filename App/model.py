@@ -52,7 +52,7 @@ def newAnalyzer():
                 'instrumentalness':None,
                 'speechiness':None,
                 'liveness':None,
-                'speechiness':None,
+                'energy':None
                 'danceability':None,
                 'valence':None,
                 'acousticness':None
